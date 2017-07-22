@@ -1,0 +1,65 @@
+#初步的源代码的实现-修改
+#1. 文件名生成的修改
+
+# -*- coding: utf-8 -*-
+# get image manjisweet()
+
+import time,datetime,socket,urllib,urllib2,cookielib
+
+#threeDayAgo = (datetime.datetime.now() - datetime.timedelta(days = 10)) 
+#print datetime.datetime.now()
+#print datetime.timedelta(days = 10)
+
+if __name__=='__main__':
+
+	range_date()
+
+	socket.setdefaulttimeout(10)
+	headers={}
+	cookiejar = cookielib.CookieJar()
+	urlOpener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookiejar))
+
+
+	gid_manji_211 = "9172" # manji (211.152.53.148)
+	nm_gid_manji_211 = "manjitianping (211.152.53.148)"
+	nm_gid_client = "张瑜，你好：满记甜品（211.152.53.148）[M月D日] 流量截图如下，请查收。谢谢。"
+
+
+	#unm_gid = nm_gid_manji_211.decode("GBK")
+	#zunm_gid = unm_gid.encode('GBK')
+	#unm_gid = nm_gid_manji_211.decode("gb18030")
+	#zunm_gid = unm_gid.encode('gb18030')
+	#yunm_gid = zunm_gid.decode('gb18030').encode('gb18030')
+	print nm_gid_manji_211
+
+
+
+	#gid = "15537" # boyou (203.166.172.78) #博悠
+	#gid = "15515" # boyou (211.152.46.99-100) #博悠
+	#gid_boyou_211 = "15515"
+	#nm_gid_boyou_211 = "博悠（211.152.46.99-100）"
+	#gid_boyou_203 = "15537"
+	#nm_gid_boyou_203 = "博悠（203.166.172.78）"
+	#nm_gid_client = "陈青柳，你好：[客户（IP）] 流量跑高，请客服跟进。谢谢。"
+
+
+
+	#unm_gid = nm_gid_boyou.decode("gb18030")
+	#zunm_gid = unm_gid.encode('gb18030')
+
+
+
+
+	res = login_pycacti_getimage(dbegin,dend,gid_manji_211)
+
+	#print zunm_gid
+	# save image to file
+	file_name = "E:/backupswitch/localroot/pub/easybridge-BA/manjisweets-cacti/" + str(dbegin) + gid_manji_211 + '_' + nm_gid_manji_211 + ".png"
+	#file_object = open('%s'%(), 'wb')
+	file_object = open(file_name, 'wb')
+
+	file_object.write(res)
+	print file_name
+	file_object.close()
+
+	print 'function done!'
