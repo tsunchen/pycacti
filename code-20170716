@@ -37,7 +37,7 @@ def range_date():
 
 
 def login_pycacti_getimage(db, de):
-	values = {'action':'login', 'login_username':'admin','login_password':'$Q=JWi+UZy' }
+	values = {'action':'login', 'login_username':'','login_password':'' }
 	data = urllib.urlencode(values)
 	print data
 	request = urllib2.Request("http://110.173.1.249/index.php", data ,headers)
