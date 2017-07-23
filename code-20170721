@@ -41,9 +41,9 @@ def range_date():
 
 
 def login_pycacti_getimage(db, de, gid):
-	#values = {'action':'login', 'login_username':'admin','login_password':'$Q=JWi+UZy' }
-	values = {'action':'login', 'login_username':'tech_21vianet','login_password':'MitKghYe' }
-	#values = {'action':'login', 'login_username':'admin','login_password':'eZeV2FE1*S' }
+	#values = {'action':'login', 'login_username':'','login_password':'' }
+	values = {'action':'login', 'login_username':'','login_password':'' }
+	#values = {'action':'login', 'login_username':'','login_password':'' }
 
 	data = urllib.urlencode(values)
 	print data
