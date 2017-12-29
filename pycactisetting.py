@@ -1,5 +1,5 @@
-cacti_suser_wgq = ''
-cacti_passw_wgq = ''
+cacti_suser_wgq = '[IPADDR]'
+cacti_passw_wgq = '[PASSWD]'
 
-cacti_suser_chj = ''
-cacti_passw_chj = ''
+cacti_suser_chj = '[IPADDR]'
+cacti_passw_chj = '[PASSWD]'
