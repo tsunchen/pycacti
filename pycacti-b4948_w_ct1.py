@@ -26,36 +26,36 @@ def range_date_from_minute():
         print oneDayAgootherStyleTime
 
         format_otherStyleTime = "%s 00:00:00" % oneDayAgootherStyleTime.split()[0]
-        print format_otherStyleTime
+        ##print format_otherStyleTime
 
-        print oneDayAgootherStyleTime.split()[1]
-        print oneDayAgootherStyleTime.split()[1].split(':')[0]
-        print oneDayAgootherStyleTime.split()[1].split(':')[1]
+        ##print oneDayAgootherStyleTime.split()[1]
+        ##print oneDayAgootherStyleTime.split()[1].split(':')[0]
+        ##print oneDayAgootherStyleTime.split()[1].split(':')[1]
 
         format_otherStyleTime2 = "%s %s:%s:00" % (oneDayAgootherStyleTime.split()[0], oneDayAgootherStyleTime.split()[1].split(':')[0], oneDayAgootherStyleTime.split()[1].split(':')[1])
-        print format_otherStyleTime2
+        ##print format_otherStyleTime2
         #dbegin=time.mktime(time.strptime(format_otherStyleTime,'%Y-%m-%d %H:%M:%S')) - 28800
         dbegin=time.mktime(time.strptime(format_otherStyleTime2,'%Y-%m-%d %H:%M:%S'))
-        print dbegin
+        ##print dbegin
 
 
         #zeroDayAgo = (datetime.datetime.now() - datetime.timedelta(hours = -8))
         zeroDayAgo = (datetime.datetime.now() - datetime.timedelta(days = 0))
         zeroDayAgootherStyleTime = zeroDayAgo.strftime("%Y-%m-%d %H:%M:%S")
-        print zeroDayAgootherStyleTime
+        ##print zeroDayAgootherStyleTime
 
-        print zeroDayAgootherStyleTime.split()[1]
-        print zeroDayAgootherStyleTime.split()[1].split(':')[0]
-        print zeroDayAgootherStyleTime.split()[1].split(':')[1]
+        ##print zeroDayAgootherStyleTime.split()[1]
+        ##print zeroDayAgootherStyleTime.split()[1].split(':')[0]
+        ##print zeroDayAgootherStyleTime.split()[1].split(':')[1]
 
         format_otherStyleTime3 = "%s %s:%s:00" % (zeroDayAgootherStyleTime.split()[0], zeroDayAgootherStyleTime.split()[1].split(':')[0], zeroDayAgootherStyleTime.split()[1].split(':')[1])
-        print format_otherStyleTime3
+        ##print format_otherStyleTime3
 
         #result = "%s 00:00:00" % zeroDayAgootherStyleTime.split()[0]
         #print result
         #dend=time.mktime(time.strptime(result,'%Y-%m-%d %H:%M:%S')) - 28800
         dend=time.mktime(time.strptime(format_otherStyleTime3,'%Y-%m-%d %H:%M:%S'))
-        print dend
+        ##print dend
 
 
 def range_date():
@@ -99,10 +99,10 @@ def login_pycacti_getimage(db, de, httpsrc, httppw):
         #values = {'action':'login', 'login_username':'admin','login_password':'eZeV2FE1*S' }
         values = {'action':'login', 'login_username':'admin','login_password': httppw }
         data = urllib.urlencode(values)
-        print data
+        ##print data
 
         idxh = 'http://' + httpsrc
-        print idxh
+        ##print idxh
         #request = urllib2.Request(idxh + '/index.php', data ,headers)
         request = urllib2.Request(idxh, data ,headers)
         res = urlOpener.open(request).read()
