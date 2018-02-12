@@ -192,4 +192,10 @@ if __name__=='__main__':
         mean=sum1/N
         print "mean: %s" % mean
         var=sum2/N-mean**2
-        print "var: %s" % var
+        var = var / 10000
+        if var < 10:
+                print "expected var: %s" % var
+        elif var < 20:
+                print "warning var: %s" % var
+        else:
+                print "critical var: %s" % var
