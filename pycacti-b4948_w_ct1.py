@@ -5,6 +5,8 @@
 import time,datetime,socket,urllib,urllib2,cookielib
 import pycactisetting
 
+from   pycacti_b4948 import *
+
 #import numpy as np
 #import cv2, matplotlib.pyplot as plt
 
@@ -174,3 +176,20 @@ if __name__=='__main__':
         file_object2.write(res3)
         file_object2.close()
         print 'function3 done!'
+
+        ###
+        nlist = []
+        nlist.append(get_FileSize(r'E:/pycacti/b4948.png'))
+        nlist.append(get_FileSize(r'E:/pycacti/b4948_bj.png'))
+        nlist.append(get_FileSize(r'E:/pycacti/b4948_chj.png'))
+        for n in nlist:
+            print n
+        narray=numpy.array(nlist)
+        sum1=narray.sum()
+        narray2=narray*narray
+        sum2=narray2.sum()
+        N=len(nlist)
+        mean=sum1/N
+        print mean
+        var=sum2/N-mean**2
+        print var
